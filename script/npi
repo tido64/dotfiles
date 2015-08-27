@@ -1,0 +1,23 @@
+#!/bin/bash
+if [[ $(node --version) == v14.* ]]; then
+  OPTIONS=""
+else
+  OPTIONS="--yes"
+fi
+
+set -x
+
+if [[ -f bun.lockb ]]; then
+  bun install $@
+elif [[ -f rush.json ]]; then
+  npx $OPTIONS @microsoft/rush install $@
+elif [[ -f yarn.lock ]]; then
+  npx $OPTIONS yarn $@
+elif [[ -f pnpm-lock.yaml ]] || [[ -f pnpm-lock.yml ]]; then
+  npx $OPTIONS pnpm install $@
+elif [[ -f package-lock.json ]]; then
+  npm install $@
+else
+  echo 'No known lock file was found'
+  exit 1
+fi

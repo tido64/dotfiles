@@ -1,0 +1,54 @@
+#!/bin/zsh
+dotfiles_root="$(cd -P $(dirname $(readlink -f ${(%):-%N}))/.. && pwd)"
+
+declare -A dotfiles
+dotfiles[$dotfiles_root/.config/fish/functions]=.config/fish
+dotfiles[$dotfiles_root/.config/mpv]=.config
+dotfiles[$dotfiles_root/.config/nvim]=.config
+dotfiles[$dotfiles_root/.gradle/gradle.properties]=.gradle
+dotfiles[$dotfiles_root/.zshrc]=.
+
+function postinstall() {
+  pushd $dotfiles_root 1> /dev/null
+  brew bundle
+  popd 1> /dev/null
+}
+
+case $(uname) in
+  Darwin)
+    # iTerm
+    dotfiles[$dotfiles_root/Library/Preferences/com.googlecode.iterm2.plist]=Library/Preferences/
+
+    # Visual Studio Code
+    vscode_prefs="Library/Application Support/Code/User"
+    dotfiles[$dotfiles_root/$vscode_prefs/settings.json]=$vscode_prefs
+
+    trap postinstall EXIT
+    ;;
+  MINGW64_NT*)
+    # Visual Studio Code
+    vscode_prefs="AppData/Roaming/Code/User"
+    dotfiles[$dotfiles_root/$vscode_prefs/settings.json]=$vscode_prefs
+
+    # Windows Terminal
+    term_prefs="AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
+    dotfiles[$dotfiles_root/$term_prefs/settings.json]=$term_prefs
+    ;;
+  *)
+    ;;
+esac
+
+pushd $HOME 1> /dev/null
+
+for dotfile dest in ${(kv)dotfiles}; do
+  local filename=$(basename $dotfile)
+  if [[ ! -e "$dest/$filename" ]]; then
+    mkdir -m 700 -p "$dest"
+    ln -s "$dotfile" "$dest"
+  fi
+done
+
+# Symlinks affect the startup directory when starting Fish
+ln $dotfiles_root/.config/fish/config.fish $HOME/.config/fish
+
+popd 1> /dev/null
