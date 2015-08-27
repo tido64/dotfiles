@@ -1,0 +1,6 @@
+.DS_Store
+.config/fish/fish_variables
+.config/nvim/plugged/
+.config/nvim/plugin/packer_compiled.lua
+Brewfile.lock.json
+Library/Application Support/Code/User/*Storage/

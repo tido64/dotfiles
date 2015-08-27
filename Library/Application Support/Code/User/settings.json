@@ -1,0 +1,130 @@
+{
+  "editor.codeLens": false,
+  "editor.dragAndDrop": false,
+  "editor.glyphMargin": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 100],
+  "editor.cursorBlinking": "smooth",
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/*.dll": true,
+    "**/*.pyc": true,
+    "**/*.sqlite": true,
+    "**/*.sublime-workspace": true,
+    "**/*.vs/rainbow": true,
+    "**/.DS_Store": true,
+    "**/.browse.VC.*": true,
+    "**/.git": true,
+    "**/StyleCop.Cache": true,
+    "**/obj": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorTheme": "SynthWave '84",
+  "workbench.editor.closeOnFileDelete": false,
+  "workbench.editor.showTabs": "single",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "args": ["--login"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["--login"]
+    }
+  },
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": ["--login"]
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash",
+      "icon": "terminal-bash"
+    },
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    }
+  },
+  "telemetry.telemetryLevel": "off",
+  "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
+  "cmake.cmakePath": "/usr/local/bin/cmake",
+  "git.autofetch": false,
+  "git.detectSubmodules": false,
+  "gitlens.blame.ignoreWhitespace": true,
+  "python.showStartPage": false,
+  "redhat.telemetry.enabled": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[c]": {
+    "editor.tabSize": 4,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[cmake]": {
+    "editor.tabSize": 2
+  },
+  "[cpp]": {
+    "editor.rulers": [80],
+    "editor.tabSize": 4,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.rulers": [80],
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.tabSize": 2
+  }
+}

@@ -1,0 +1,13 @@
+font-thicken = true
+theme = Builtin Pastel Dark
+cursor-style = block
+cursor-style-blink = false
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+window-width = 240
+window-height = 80
+copy-on-select = true
+shell-integration-features = no-cursor
+macos-titlebar-style = tabs
